@@ -1,0 +1,131 @@
+// App Global Sass
+
+
+//ALETERANDO COMPONENTES
+
+.content {
+  background: color($colors, secondary, base);
+}
+
+.card {
+  background: color($colors, secondary, base);
+}
+
+.item {
+  background: color($colors, secondary, base);
+}
+
+.card-header {
+  text-transform: uppercase;
+  position: relative;
+  font-size: 13px;
+  font-weight: 500;
+  color: color($colors, lightDark, base);
+  padding: 10px 0 5px;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  text-transform: capitalize;
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  color: color($colors, lightDark, base);
+  margin-bottom: -10px;
+  padding: 10px;
+}
+
+.slides {
+  padding: 10px;
+}
+
+.list {
+  padding: 10px;
+}
+
+
+
+//CLASSES NOSSAS
+
+.item-row {
+  height: 80px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.red-card {
+  background: red;
+  padding: 10px;
+}
+
+.yellow-card {
+  background: yellow;
+  padding: 10px;
+}
+
+
+.list-image {
+  height: 50%;
+  width: 50px;
+}
+
+.toolbar {
+  background: color($colors, primary, base);
+  color: color($colors, secondary, base);
+  padding: 0;
+}
+
+.segment {
+  margin: 0;
+}
+
+.select-championship {
+  color: color($colors, secondary, base);
+  width: 70%;
+  max-width: 70%;
+  font-size: 20px;
+}
+
+.card-actions {
+  color: color($colors, primary, base);
+  border-top: rgba(138, 135, 135, 0.247) solid 1px;
+  padding: 0;
+  bottom: -20%;
+  text-transform: uppercase;
+}
+
+.slide-title {
+  text-transform: uppercase;
+  position: relative;
+  font-size: 12px;
+  font-weight: 500;
+  color: color($colors, dark, base);
+  padding: 10px 0 0;
+}
+
+.card-main {
+  font-weight: 300;
+  font-size: 1.5em;
+}
+
+.games-content {
+  margin: 140px 0 0;
+}
+.inline-subtitle{
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.subtitle {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.sumula-margin {
+  margin-top: 10px;
+}
+.sumula-items {
+    font-size: 14px;
+    text-transform: capitalize;
+    border-bottom: 0.4px solid rgba(0, 0, 0, 0.5);
+    color: gray;
+    font-weight: 500;
+}

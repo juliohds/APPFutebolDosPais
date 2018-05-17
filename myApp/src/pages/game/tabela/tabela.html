@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <!-- <ion-select [(ngModel)]="champion" class="select-championship">
+            <ion-option *ngFor="let champ of championship" value="{{champ}}">
+                    Campeonato {{champ}}
+            </ion-option>
+        </ion-select> -->
+        <ion-title>Tabela Campeonato 2018</ion-title>
+    </ion-navbar>
+            <ion-toolbar class="toolbar" no-border-bottom>
+                <ion-segment class="segment" [(ngModel)]="ligaSelecionada">
+                  <ion-segment-button value="Master">
+                      liga Master
+                  </ion-segment-button>
+                  <ion-segment-button value="Senior">
+                      liga Senior
+                  </ion-segment-button>
+                </ion-segment>
+            </ion-toolbar>
+</ion-header>
+<ion-content>
+        <ion-card *ngFor="let turno of turnos[ligaSelecionada]; let i = index" >
+          <ion-card-title text-center>
+              {{turno}}º Turno
+          </ion-card-title>
+          <ion-card-content>
+            <ion-slides pager>
+              <ion-slide *ngFor="let rodada of rodadas[ligaSelecionada][turno]; let i = index">
+                <span class="slide-title"> {{rodada}}º Rodada</span>
+                    <ion-list>
+                      <ion-grid ion-item *ngFor="let jogo of jogos[ligaSelecionada][turno][rodada]">
+                        <ion-row align-items-center justify-content-center>
+                            <ion-col text-start>
+                                <img src="{{jogo.equipe1Logo}}">
+                            </ion-col>
+                            <ion-col></ion-col>
+                            <ion-col text-center>
+                                 <h1>x</h1>
+                            </ion-col>
+                            <ion-col></ion-col>
+                            <ion-col text-end>
+                                <img src="{{jogo.equipe2Logo}}">
+                            </ion-col>
+                        </ion-row>
+                        <ion-row align-items-center justify-content-center>
+                          <ion-col text-start>
+                            <h3>{{jogo.equipe1}}</h3>
+                          </ion-col>
+                          <ion-col></ion-col>
+                          <ion-col></ion-col>
+                          <ion-col></ion-col>
+                          <ion-col text-end>
+                            <h3>{{jogo.equipe2}}</h3>
+                          </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-note text-center>
+                                    <h2>{{jogo.data}} - {{jogo.horario}}</h2>
+                                </ion-note>
+                            </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                    </ion-list>
+            </ion-slide>
+        </ion-slides>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

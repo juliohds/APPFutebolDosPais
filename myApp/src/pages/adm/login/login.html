@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>    
+        <ion-title>Login Administrativo</ion-title>
+    </ion-navbar>
+  
+</ion-header>
+
+<ion-content>
+    <ion-list style="margin-top: 50%">
+        <ion-item>
+            <ion-label>Usuário</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Senha</ion-label>
+            <ion-input type="password"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <div padding>
+    <button ion-button block full (click)="validateLogin()">Logar</button>
+    </div>  
+</ion-content>

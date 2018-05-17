@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Futebol dos Pais</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card class="card">
+        <ion-card-header text-center>
+           ultimo jogo - {{ultimoJogo ? ultimoJogo.data : ' '}}
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row (click)="toGameDetails($event, ultimoJogo)" align-items-center justify-content-center >
+                  <ion-col>
+                      <img src="{{ultimoJogo ? ultimoJogo.equipe1Logo : '' }}">
+                  </ion-col>
+                  <ion-col text-center class="card-main">
+                      {{ultimoJogo ? ultimoJogo.golsEquipe1 + ' x ' + ultimoJogo.golsEquipe2 : ' ' }}
+                  </ion-col>
+                  <ion-col>
+                      <img src="{{ultimoJogo ? ultimoJogo.equipe2Logo : '' }}">
+                  </ion-col>
+                </ion-row>
+                <ion-row (click)="toGameDetails($event, ultimoJogo)" align-items-center justify-content-center>
+                    <ion-col text-center>
+                        {{ ultimoJogo ? ultimoJogo.equipe1 : ' '}}
+                    </ion-col>
+                    <ion-col></ion-col>
+                    <ion-col text-center>
+                        {{ ultimoJogo ? ultimoJogo.equipe2 : ' '}}
+                    </ion-col>
+                </ion-row>
+                <ion-row align-items-end justify-content-end>
+                    <ion-col text-center class="card-actions">
+                        <button ion-button (click)="toGamesList()" block clear>mais</button>
+                    </ion-col>
+                 </ion-row>
+              </ion-grid>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header text-center>
+        Top Artilheiros 2018
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+            <ion-list-header border-bottom>
+                <ion-row align-items-start justify-content-start>
+                        <ion-col text-start>
+                            Jogador
+                        </ion-col>
+                        <ion-col text-center>
+                            Gols
+                        </ion-col>
+                        <ion-col text-center>
+                            Time
+                        </ion-col>
+                </ion-row>
+            </ion-list-header>
+            <ion-item *ngFor="let artilheiro of artilheiros" style="">
+                    <ion-row align-items-center justify-content-center>
+                        <ion-col text-start class="item-row">
+                            <p><span class="inline-subtitle">{{artilheiro.numero}}</span> {{artilheiro.nome}}</p>
+                            <span class="subtitle">{{artilheiro.posicao}}</span><br>
+                            <span class="subtitle" >{{artilheiro.categoria}}</span><br>
+                        </ion-col>
+                        <ion-col text-center class="item-row">
+                            {{artilheiro.gols}}
+                        </ion-col>
+                        <ion-col text-end class="item-row">
+                            <img src="{{artilheiro.equipeLogo}}" alt="" height="40">
+                        </ion-col>
+                    </ion-row>
+            </ion-item>
+        </ion-list>
+        <ion-row align-items-end justify-content-end>
+          <ion-col text-center class="card-actions">
+              <button ion-button (click)="toScorersList()" block clear>mais</button>
+          </ion-col>
+       </ion-row>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

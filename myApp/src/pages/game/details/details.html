@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar  color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sumula</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-card class="card" *ngIf="jogo">
+        <ion-card-header text-center>
+            {{jogo.categoria}}
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row align-items-center justify-content-center>
+                  <ion-col >
+                      <img src="{{jogo.equipe1Logo}}">
+                  </ion-col>
+                  <ion-col text-center class="card-main">
+                      {{jogo.golsEquipe1}} x {{jogo.golsEquipe2}}
+                  </ion-col>
+                  <ion-col>
+                      <img src="{{jogo.equipe2Logo}}">
+                  </ion-col>
+                </ion-row>
+                <ion-row align-items-center justify-content-center>
+                    <ion-col text-center>
+                        {{jogo.equipe1}}
+                    </ion-col>
+                    <ion-col></ion-col>
+                    <ion-col text-center>
+                        {{jogo.equipe2}}
+                    </ion-col>
+                </ion-row>
+                <ion-row align-items-center justify-content-center>
+                    <ion-col text-center>
+                      {{jogo.data}} - {{jogo.horario}}
+                    </ion-col>
+                </ion-row>
+                <ion-row align-items-center justify-content-center class="sumula-items sumula-margin">
+                    <ion-col text-start>
+                      Arbitro: {{jogo.arbitro}}
+                    </ion-col>
+                </ion-row>
+                <ion-row align-items-center justify-content-center class="sumula-items">
+                    <ion-col text-start>
+                      Assistente 1: {{jogo.assistente1}}
+                    </ion-col>
+                </ion-row>
+                <ion-row align-items-center justify-content-center class="sumula-items">
+                    <ion-col text-start>
+                      Assistente 2: {{jogo.assistente2}}
+                    </ion-col>
+                </ion-row>
+                <ion-row align-items-center justify-content-center class="sumula-items">
+                    <ion-col text-start>
+                      Cartões Vermelhos: {{jogo.cartoesVermelhos}}
+                    </ion-col>
+                </ion-row>
+                <ion-row align-items-center justify-content-center class="sumula-items">
+                    <ion-col text-start>
+                      Cartões Amarelos: {{jogo.cartoesAmarelos}}
+                    </ion-col>
+                </ion-row>
+                <ion-row align-items-center justify-content-center class="sumula-items">
+                    <ion-col text-start>
+                      Nota Arbitro {{jogo.equipe1}} : {{jogo.notaArbitroEquipe1}}
+                    </ion-col>
+                </ion-row>
+                <ion-row align-items-center justify-content-center class="sumula-items">
+                    <ion-col text-start>
+                      Nota Arbitro {{jogo.equipe2}}: {{jogo.notaArbitroEquipe2}}
+                    </ion-col>
+                </ion-row>
+              </ion-grid>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

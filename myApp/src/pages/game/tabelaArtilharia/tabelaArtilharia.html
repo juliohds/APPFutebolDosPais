@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Artilheiros</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-list-header border-bottom>
+          <ion-row align-items-start justify-content-start>
+            <ion-col text-start>
+              Jogador
+            </ion-col>
+            <ion-col text-center>
+              Gols
+            </ion-col>
+            <ion-col text-center>
+              Time
+            </ion-col>
+          </ion-row>
+        </ion-list-header>
+        <ion-item *ngFor="let artilheiro of artilheiros" style="">
+          <ion-row align-items-center justify-content-center>
+            <ion-col text-start class="item-row">
+              <p><span class="inline-subtitle">{{artilheiro.numero}}</span> {{artilheiro.nome}}</p>
+              <span class="subtitle">{{artilheiro.posicao}}</span><br>
+              <span class="subtitle">{{artilheiro.categoria}}</span><br>
+            </ion-col>
+            <ion-col text-center class="item-row">
+              {{artilheiro.gols}}
+            </ion-col>
+            <ion-col text-end class="item-row">
+              <img src="{{artilheiro.equipeLogo}}" alt="" height="40">
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

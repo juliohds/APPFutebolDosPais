@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Jogos</ion-title>
+  </ion-navbar>
+  <ion-toolbar class="toolbar" no-border-bottom>
+    <ion-segment class="segment" [(ngModel)]="ligaSelecionada">
+      <ion-segment-button value="Master">
+        liga Master
+      </ion-segment-button>
+      <ion-segment-button value="Senior">
+        liga Senior
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let turno of turnos[ligaSelecionada]; let i = index">
+    <ion-card-title text-center>
+      {{turno}}º Turno
+    </ion-card-title>
+    <ion-card-content>
+      <ion-slides pager>
+        <ion-slide *ngFor="let rodada of rodadas[ligaSelecionada][turno]; let i = index">
+          <span class="slide-title"> {{rodada}}º Rodada</span>
+          <ion-list>
+            <button ion-item *ngFor="let jogo of jogos[ligaSelecionada][turno][rodada]" (click)="toGameDetails($event, jogo)">
+                        <ion-row align-items-center justify-content-center>
+                            <ion-col text-start>
+                                <img src="{{jogo.equipe1Logo}}">
+                            </ion-col>
+                            <ion-col></ion-col>
+                            <ion-col text-center>
+                                {{jogo.golsEquipe1}} x {{jogo.golsEquipe2}}
+                            </ion-col>
+                            <ion-col></ion-col>
+                            <ion-col text-end>
+                                <img src="{{jogo.equipe2Logo}}">
+                            </ion-col>
+                        </ion-row>
+                        <ion-row align-items-center justify-content-center>
+                          <ion-col text-start>
+                            <p>{{jogo.equipe1}}</p>
+                          </ion-col>
+                          <ion-col></ion-col>
+                          <ion-col></ion-col>
+                          <ion-col></ion-col>
+                          <ion-col text-end>
+                            <p>{{jogo.equipe2}}</p>
+                          </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <ion-note text-center>
+                                    <p>{{jogo.data}}</p>
+                                </ion-note>
+                            </ion-col>
+                        </ion-row>
+                      </button>
+          </ion-list>
+        </ion-slide>
+      </ion-slides>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
